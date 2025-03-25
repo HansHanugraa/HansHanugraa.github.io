@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biodata Saya</title>
+    <link rel="icon" type="image/png" href="https://bit.ly/LogoHans">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            width: 50%;
+            min-width: 320px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #764ba2;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+            animation: slideIn 1s ease-in-out;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+            position: relative;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+        }
+        td:first-child {
+            font-weight: bold;
+            width: 30%;
+            color: #555;
+        }
+        .animated-text {
+            display: inline-block;
+            white-space: normal;
+            overflow: hidden;
+            border-right: 2px solid transparent;
+        }
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://bit.ly/ProfilHans" alt="Foto Profil" class="profile-pic">
+            <h2>Biodata Saya</h2>
+        </div>
+        <table>
+            <tr>
+                <td>📝 Nama</td>
+                <td><span class="animated-text" id="nama"></span></td>
+            </tr>
+            <tr>
+                <td>🎓 NIM</td>
+                <td><span class="animated-text" id="nim"></span></td>
+            </tr>
+            <tr>
+                <td>📍 Alamat</td>
+                <td><span class="animated-text" id="alamat"></span></td>
+            </tr>
+            <tr>
+                <td>🏡 Kota Asal</td>
+                <td><span class="animated-text" id="kota"></span></td>
+            </tr>
+            <tr>
+                <td>🌐 Blog</td>
+                <td><a href="https://hanshanugra.blogspot.com" target="_blank" class="animated-text" id="blog"></a></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function typeEffect(element, text, speed) {
+            let i = 0;
+            function typing() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typing, speed);
+                }
+            }
+            typing();
+        }
+
+        window.onload = function() {
+            typeEffect(document.getElementById("nama"), "Hanugra Christmanuel Liejaya (Hans)", 50);
+            typeEffect(document.getElementById("nim"), "G.231.24.0116", 50);
+            typeEffect(document.getElementById("alamat"), "Jl. Bawangan No.21, Siwalan, Kec. Gayamsari, Kota Semarang, Jawa Tengah 50197, Indonesia", 30);
+            typeEffect(document.getElementById("kota"), "Purwokerto", 50);
+            typeEffect(document.getElementById("blog"), "hanshanugra.blogspot.com", 50);
+        };
+    </script>
+</body>
+</html>
